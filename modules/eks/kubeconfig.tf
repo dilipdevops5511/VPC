@@ -3,5 +3,5 @@ data "aws_eks_cluster_auth" "cluster" {
 }
 
 output "kubeconfig_filename" {
-  value = data.aws_eks_cluster_auth.cluster.kubeconfig_filename
+  value = data.aws_eks_cluster_auth.cluster.kubeconfig
 }
