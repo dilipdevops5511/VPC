@@ -1,6 +1,6 @@
 variable "region" {
   description = "AWS region"
-  default     = "us-east-1"  # Update with your desired AWS region
+  default     = "us-east-1"
 }
 
 variable "vpc_cidr_block" {
