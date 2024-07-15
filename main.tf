@@ -13,7 +13,7 @@ module "eks_cluster" {
   source = "./modules/eks"
 
   eks_cluster_name       = var.eks_cluster_name
-  vpc_id                 = modules.vpc.vpc_id
+  vpc_id                 = module.vpc.vpc_id
   eks_node_instance_type = var.eks_node_instance_type
   eks_node_capacity      = var.eks_node_capacity
   eks_node_min_capacity  = var.eks_node_min_capacity
