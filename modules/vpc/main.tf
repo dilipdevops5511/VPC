@@ -1,6 +1,3 @@
-variable "vpc_cidr_block" {}
-variable "region" {}
-
 provider "aws" {
   region = var.region
 }
@@ -37,15 +34,3 @@ resource "aws_subnet" "private" {
 }
 
 data "aws_availability_zones" "available" {}
-
-output "vpc_id" {
-  value = aws_vpc.main.id
-}
-
-output "public_subnet_ids" {
-  value = aws_subnet.public[*].id
-}
-
-output "private_subnet_ids" {
-  value = aws_subnet.private[*].id
-}
