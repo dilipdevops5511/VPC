@@ -1,10 +1,14 @@
+provider "aws" {
+  region = var.region
+}
+
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "~> 17.0"
 
   cluster_name    = var.eks_cluster_name
   cluster_version = "1.21"
-  vpc_id          = var.vpc_id
+  vpc_id          = var.vpc_id  # Directly use var.vpc_id here
 
   subnets = {
     private = aws_subnet.private[*].id
@@ -19,4 +23,8 @@ module "eks" {
       instance_type    = var.eks_node_instance_type
     }
   }
+}
+
+output "kubeconfig" {
+  value = module.eks.kubeconfig_filename
 }
