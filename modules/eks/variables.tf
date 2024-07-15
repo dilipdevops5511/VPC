@@ -2,6 +2,10 @@ variable "region" {
   description = "AWS region"
   default     = "us-east-1"  # Update with your desired AWS region
 }
+variable "vpc_id" {
+  type    = string
+  description = "ID of the VPC where the EKS cluster will be deployed"
+}
 
 variable "eks_cluster_name" {
   description = "Name of the EKS cluster"
